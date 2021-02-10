@@ -1,4 +1,8 @@
-FROM nginx:1.15.8-alpine
-LABEL version="1.0.0"
-ENV REFRESHED_AT=2019-12-02-1
-COPY index.html /usr/share/nginx/html/index.html
+FROM jrottenberg/ffmpeg:4.1-alpine
+
+RUN apk add py3-pip
+
+RUN pip3 install ffmpeg-normalize
+
+CMD ["--help"]
+ENTRYPOINT [""]
